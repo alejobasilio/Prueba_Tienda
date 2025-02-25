@@ -1,6 +1,10 @@
 package com.alejobasilio.pruba_tienda.integration.model;
 
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +19,17 @@ import lombok.Setter;
 @Table(name = "PRODUCTO")
 class Producto {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String nombre;
 	private String marca;
+	
+	@Embedded
 	private Precio precio;
+
+	@Embedded
+	private Caracteristica caracteristica;
 	
 }
