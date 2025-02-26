@@ -1,5 +1,6 @@
 package com.alejobasilio.pruba_tienda.integration.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +24,7 @@ class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "nombre_producto")
 	private String nombre;
 	private String marca;
 	
