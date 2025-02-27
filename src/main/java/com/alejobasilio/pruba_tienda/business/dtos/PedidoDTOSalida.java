@@ -5,6 +5,15 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
+
+/**
+ * Clase que representa la salida de un pedido.
+ * Los Dtos que contienen la palabra salida son Clases que se devolveran al usuario
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ * @since 1.0
+ */
 @Getter
 @Setter
 public class PedidoDTOSalida {
