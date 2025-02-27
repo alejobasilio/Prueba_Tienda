@@ -15,6 +15,13 @@ import com.alejobasilio.pruba_tienda.integration.model.Pedido;
 import com.alejobasilio.pruba_tienda.integration.model.Precio;
 import com.alejobasilio.pruba_tienda.integration.model.Producto;
 
+/**
+ * Clase que implementa la interfaz {@link PedidoMapper} y proporciona la lógica para mapear entidades a objetos de transferencia de datos (DTOS).
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ * @since 1.0
+ */
 @Service
 public class PedidoMapperImpl implements PedidoMapper {
 
@@ -43,6 +50,10 @@ public class PedidoMapperImpl implements PedidoMapper {
         return precioDTOSalida;
 	}
 
+	/**
+     * Método que convierte un objeto de tipo {@link Pedido} en un objeto de tipo {@link PedidoDTOSalida}.
+     * En el se recoge el id y despues se va iterando los productos
+     */
 	@Override
 	public PedidoDTOSalida pedidoPedidoDTOSalida(Pedido pedido) {
 		
