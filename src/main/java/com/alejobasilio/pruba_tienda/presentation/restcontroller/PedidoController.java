@@ -11,9 +11,15 @@ import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOEntrada;
 import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOSalida;
 import com.alejobasilio.pruba_tienda.business.services.PedidoService;
 
+/**
+ * Controlador REST que maneja las solicitudes relacionadas con pedidos.
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ * @since 1.0
+ */
 @RestController
 @RequestMapping("/api/pedidos")
-
 public class PedidoController {
 
 	private PedidoService pedidoService;
@@ -27,11 +33,19 @@ public class PedidoController {
 
 
 
+	/**
+     * Método que crea un nuevo pedido.
+     * 
+     */
 	@PostMapping
     public PedidoDTOSalida crearPedido(@RequestBody PedidoDTOEntrada pedidoDTO) {
         return pedidoService.transformarPedido(pedidoDTO);
     }
 	
+    /**
+     * Método que borra un pedido por su ID.
+     * 
+     */
 	@DeleteMapping("/{id}")
 	public void borrarPedido(@PathVariable Long id) {
 	    pedidoService.borrarPedidoById(id);
