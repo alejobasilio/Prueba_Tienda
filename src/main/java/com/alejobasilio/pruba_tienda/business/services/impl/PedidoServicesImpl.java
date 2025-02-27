@@ -17,6 +17,13 @@ import com.alejobasilio.pruba_tienda.integration.model.Producto;
 import com.alejobasilio.pruba_tienda.integration.repositories.PedidoRepository;
 import com.alejobasilio.pruba_tienda.integration.repositories.ProductoRepository;
 
+/**
+ * Clase que implementa la interfaz {@link PedidoService} y proporciona la lógica para gestionar pedidos.
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ * @since 1.0
+ */
 @Service
 public class PedidoServicesImpl implements PedidoService {
 
@@ -32,6 +39,10 @@ public class PedidoServicesImpl implements PedidoService {
 		this.pedidoMapper = pedidoMapper;
 	}
 
+	/**
+     * Método que transforma un objeto de tipo {@link PedidoDTOEntrada} en un objeto de tipo {@link PedidoDTOSalida}.
+     * 
+     */
 	@Override
 	public PedidoDTOSalida transformarPedido(PedidoDTOEntrada pedidoDTO) {
 

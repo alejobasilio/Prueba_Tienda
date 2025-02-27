@@ -5,12 +5,21 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.alejobasilio.pruba_tienda.business.services.PedidoService;
 import com.alejobasilio.pruba_tienda.business.services.ProductoService;
 import com.alejobasilio.pruba_tienda.integration.model.Producto;
 import com.alejobasilio.pruba_tienda.integration.repositories.ProductoRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+
+/**
+ * Clase que implementa la interfaz {@link ProductoService} y proporciona la lógica para gestionar productos.
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ * @since 1.0
+ */
 
 @AllArgsConstructor
 @Service
