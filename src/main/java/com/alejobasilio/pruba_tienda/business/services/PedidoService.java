@@ -13,4 +13,6 @@ public interface PedidoService {
     Optional<PedidoDTOSalida> obtenerPedidoPorId(Long id);
     
     List<PedidoDTOSalida> obtenerTodosLosPedidos();
+    
+    void borrarPedidoById(Long id);
 }

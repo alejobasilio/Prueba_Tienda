@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOEntrada;
@@ -16,15 +17,20 @@ import com.alejobasilio.pruba_tienda.integration.model.Producto;
 import com.alejobasilio.pruba_tienda.integration.repositories.PedidoRepository;
 import com.alejobasilio.pruba_tienda.integration.repositories.ProductoRepository;
 
-import lombok.AllArgsConstructor;
-
 @Service
-@AllArgsConstructor
 public class PedidoServicesImpl implements PedidoService {
 
 	private PedidoRepository pedidoRepository;
 	private ProductoRepository productoRepository;
 	private PedidoMapper pedidoMapper;
+
+	@Autowired
+	public PedidoServicesImpl(PedidoRepository pedidoRepository, ProductoRepository productoRepository,
+			PedidoMapper pedidoMapper) {
+		this.pedidoRepository = pedidoRepository;
+		this.productoRepository = productoRepository;
+		this.pedidoMapper = pedidoMapper;
+	}
 
 	@Override
 	public PedidoDTOSalida transformarPedido(PedidoDTOEntrada pedidoDTO) {
@@ -66,6 +72,12 @@ public class PedidoServicesImpl implements PedidoService {
 			pedidosDTOSalida.add(pedidoDTOSalida);
 		}
 		return pedidosDTOSalida;
+	}
+
+	@Override
+	public void borrarPedidoById(Long id) {
+		pedidoRepository.deleteById(id);
+		
 	}
 
 }
