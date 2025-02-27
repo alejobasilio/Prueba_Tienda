@@ -7,12 +7,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Clase que representa un precio.
+ * 
+ * Un pedido es una entidad que contiene el tipo de moneda y el valor.
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Embeddable
-class Precio {
+public class Precio {
 	
 	private String moneda;
 	
