@@ -17,6 +17,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Clase que representa un producto.
+ * 
+ * Un pedido es una entidad que contiene un nombre_producto, marca, Precio y una Lista de Caracteristicas.
+ * 
+ * @author Alejo Basilio Alfonso
+ * @version 1.0
+ */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
