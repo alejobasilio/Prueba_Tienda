@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Embeddable
-class Precio {
+public class Precio {
 	
 	private String moneda;
 	

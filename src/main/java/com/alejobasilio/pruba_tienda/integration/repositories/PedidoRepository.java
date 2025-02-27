@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alejobasilio.pruba_tienda.integration.model.Pedido;
 
-public interface PedidoRepository extends JpaRepository<Pedido, Long>{
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
-	@Query("SELECT p FROM Pedido p WHERE p.carrito.id IN :ids")
-	List<Pedido> pedidosPorIds (@RequestParam("ids") List<String> ids);
+	@Query("SELECT DISTINCT p FROM Pedido p JOIN p.listaProductos lp WHERE lp.id IN :ids")
+	List<Pedido> pedidosPorIds(@RequestParam("ids") List<Long> ids);
+
 }
