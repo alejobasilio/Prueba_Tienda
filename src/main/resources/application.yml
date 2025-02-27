@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: pruba-tienda
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/prueba_tienda?useSSL=false
+    username: root
+    password: Lahojarota_1324
+mapstruct:
+  default-component-model: spring
