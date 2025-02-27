@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Embeddable
-class Caracteristica {
+public class Caracteristica {
 
 	private String nombre; 
 	private String valor; 

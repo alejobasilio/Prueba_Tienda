@@ -1,6 +1,11 @@
 package com.alejobasilio.pruba_tienda.integration.model;
 
+import java.util.List;
+
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +36,8 @@ public class Producto {
 	@Embedded
 	private Precio precio;
 
-	@Embedded
-	private Caracteristica caracteristica;
+	@ElementCollection
+    @CollectionTable(name = "PRODUCTO_CARACTERISTICAS", joinColumns = @JoinColumn(name = "producto_id"))
+    private List<Caracteristica> caracteristicas; 
 	
 }
