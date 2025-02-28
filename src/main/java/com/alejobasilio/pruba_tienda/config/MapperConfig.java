@@ -1,4 +1,4 @@
-package com.alejobasilio.pruba_tienda.presentation.config;
+package com.alejobasilio.pruba_tienda.config;
 
 import org.mapstruct.factory.Mappers;
 import org.springframework.context.annotation.Bean;
