@@ -22,16 +22,20 @@ public interface PedidoService {
     PedidoDTOSalida transformarPedido(PedidoDTOEntrada pedidoDTO);
     
     /**
-     * Método que obtiene una lista de todos los pedidos.
+     * Método que obtiene un pedido por id.
      * 
      */
     Optional<PedidoDTOSalida> obtenerPedidoPorId(Long id);
     
     /**
-     * Método que borra un pedido por su ID.
+     * Método que obtiene una lista de todos los pedidos.
      * 
      */
     List<PedidoDTOSalida> obtenerTodosLosPedidos();
     
+    /**
+     * Método que borra un pedido por su ID.
+     * 
+     */
     void borrarPedidoById(Long id);
 }
