@@ -1,10 +1,9 @@
 package com.alejobasilio.pruba_tienda.business.mappers;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.alejobasilio.pruba_tienda.business.dtos.CaracteristicasDTOSalida;
 import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOSalida;
@@ -22,7 +21,7 @@ import com.alejobasilio.pruba_tienda.integration.model.Producto;
  * @version 1.0
  * @since 1.0
  */
-@Service
+@Component
 public class PedidoMapperImpl implements PedidoMapper {
 
 	@Override
