@@ -8,6 +8,6 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/prueba_tienda?useSSL=false
     username: root
-    password: Lahojarota_1324
+    password: contraseña
 mapstruct:
   default-component-model: spring
