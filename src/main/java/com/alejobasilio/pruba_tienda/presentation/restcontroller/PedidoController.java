@@ -1,10 +1,12 @@
 package com.alejobasilio.pruba_tienda.presentation.restcontroller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOEntrada;
@@ -38,6 +40,7 @@ public class PedidoController {
      * 
      */
 	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
     public PedidoDTOSalida crearPedido(@RequestBody PedidoDTOEntrada pedidoDTO) {
         return pedidoService.transformarPedido(pedidoDTO);
     }
