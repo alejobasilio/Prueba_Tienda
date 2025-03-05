@@ -2,6 +2,8 @@ package com.alejobasilio.pruba_tienda.business.dtos;
 
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +20,10 @@ import lombok.Setter;
 @Setter
 public class PedidoDTOSalida {
 
-	private Long id;
+
+    @Schema(description = "ID del pedido", example = "1")
+    private Long id;
+    
+    @ArraySchema(schema = @Schema(implementation = ProductoDTOSalida.class))
 	private List<ProductoDTOSalida> carrito;
 }

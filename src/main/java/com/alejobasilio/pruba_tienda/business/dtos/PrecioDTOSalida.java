@@ -1,5 +1,6 @@
 package com.alejobasilio.pruba_tienda.business.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,9 @@ import lombok.Setter;
 @Setter
 public class PrecioDTOSalida {
 
+	@Schema(description = "Moneda del producto", example = "€")
 	private String moneda;
+	
+	@Schema(description = "Precio del producto", example = "25")
 	private Double valor;
 }

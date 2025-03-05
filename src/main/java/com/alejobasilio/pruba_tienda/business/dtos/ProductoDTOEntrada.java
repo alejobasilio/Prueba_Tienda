@@ -1,5 +1,6 @@
 package com.alejobasilio.pruba_tienda.business.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProductoDTOEntrada {
-
+	
+	@Schema(description = "ID del producto", example = "1")
 	private Long id;
 }

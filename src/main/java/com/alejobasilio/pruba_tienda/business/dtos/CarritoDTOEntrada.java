@@ -2,6 +2,7 @@ package com.alejobasilio.pruba_tienda.business.dtos;
 
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +18,6 @@ import lombok.Setter;
 @Setter
 public class CarritoDTOEntrada {
 
+	 @Schema(description = "Lista de productos en el carrito", implementation = ProductoDTOEntrada.class)
 	private List<ProductoDTOEntrada> productos;
 }

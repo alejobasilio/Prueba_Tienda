@@ -1,5 +1,6 @@
 package com.alejobasilio.pruba_tienda.business.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,5 +16,6 @@ import lombok.Setter;
 @Setter
 public class PedidoDTOEntrada {
 
+	@Schema(description = "Carrito de compras del pedido")
 	private CarritoDTOEntrada carrito;
 }
