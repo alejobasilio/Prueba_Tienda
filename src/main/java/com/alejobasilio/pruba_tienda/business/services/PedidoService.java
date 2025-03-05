@@ -14,28 +14,29 @@ import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOSalida;
  * @since 1.0
  */
 public interface PedidoService {
-	
-	  /**
-     * Método que transforma un objeto de tipo {@link PedidoDTOEntrada} en un objeto de tipo {@link PedidoDTOSalida}.
-     * 
-     */
-    PedidoDTOSalida transformarPedido(PedidoDTOEntrada pedidoDTO);
-    
-    /**
-     * Método que obtiene un pedido por id.
-     * 
-     */
-    Optional<PedidoDTOSalida> obtenerPedidoPorId(Long id);
-    
-    /**
-     * Método que obtiene una lista de todos los pedidos.
-     * 
-     */
-    List<PedidoDTOSalida> obtenerTodosLosPedidos();
-    
-    /**
-     * Método que borra un pedido por su ID.
-     * 
-     */
-    void borrarPedidoById(Long id);
+
+	/**
+	 * Método que transforma un objeto de tipo {@link PedidoDTOEntrada} en un objeto
+	 * de tipo {@link PedidoDTOSalida}.
+	 * 
+	 */
+	PedidoDTOSalida transformarPedido(PedidoDTOEntrada pedidoDTO);
+
+	/**
+	 * Método que obtiene un pedido por id.
+	 * 
+	 */
+	Optional<PedidoDTOSalida> obtenerPedidoPorId(Long id);
+
+	/**
+	 * Método que obtiene una lista de todos los pedidos.
+	 * 
+	 */
+	List<PedidoDTOSalida> obtenerTodosLosPedidos();
+
+	/**
+	 * Método que borra un pedido por su ID.
+	 * 
+	 */
+	void borrarPedidoById(Long id);
 }
