@@ -1,6 +1,7 @@
 package com.alejobasilio.pruba_tienda.business.dtos;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Clase que representa la entrada de un pedido.
@@ -11,6 +12,7 @@ import lombok.Getter;
  * @since 1.0
  */
 @Getter
+@Setter
 public class PedidoDTOEntrada {
 
 	private CarritoDTOEntrada carrito;
