@@ -8,6 +8,7 @@ class PrubaTiendaApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// Método para testear el main
 	}
 
 }

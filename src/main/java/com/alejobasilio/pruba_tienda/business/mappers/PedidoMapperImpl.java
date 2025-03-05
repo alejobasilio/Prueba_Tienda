@@ -58,7 +58,7 @@ public class PedidoMapperImpl implements PedidoMapper {
 		
 		PedidoDTOSalida pedidoDTOSalida = new PedidoDTOSalida();
 	    pedidoDTOSalida.setId(pedido.getId());
-	    List<ProductoDTOSalida> productosDTOSalida = new ArrayList();
+	    List<ProductoDTOSalida> productosDTOSalida = new ArrayList<>();
 	    
 	    for (Producto producto : pedido.getListaProductos()) {
 	        ProductoDTOSalida productoDtoSalida = new ProductoDTOSalida();
@@ -67,7 +67,7 @@ public class PedidoMapperImpl implements PedidoMapper {
 	        productoDtoSalida.setMarca(producto.getMarca());
 	        productoDtoSalida.setPrecio(precioPrecioDTOSalida(producto.getPrecio()));
 	        
-	        List<CaracteristicasDTOSalida> list = new ArrayList(); 
+	        List<CaracteristicasDTOSalida> list = new ArrayList<>(); 
 	        for(Caracteristica caracteristica : producto.getCaracteristicas()) {
 	        	list.add(caracteristicaCaracteristicasDTOSalida(caracteristica));
 	        }

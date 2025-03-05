@@ -9,12 +9,12 @@ import org.springframework.http.HttpStatus;
 class PresentationExceptionTest {
 
 	private PresentationException presentationException;
-	private PresentationException presentationException1;
+	
 	
 	@BeforeEach
 	void setUp() {
+		presentationException = new PresentationException("Prueba Test", 404);
 		presentationException = new PresentationException("Prueba Test", HttpStatus.BAD_REQUEST);
-		presentationException1 = new PresentationException("Prueba Test", 404);
 	}
 	
 	@Test

@@ -8,12 +8,6 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-
-import static org.mockito.ArgumentMatchers.booleanThat;
-import static org.mockito.ArgumentMatchers.intThat;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.when;
-
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.alejobasilio.pruba_tienda.business.dtos.CaracteristicasDTOSalida;
@@ -100,7 +94,6 @@ class PedidoMapperImplTest {
 		producto.getCaracteristicas().add(caracteristica);
 		pedido.getListaProductos().add(producto);
 
-		CaracteristicasDTOSalida caracteristicasDTOSalida = new CaracteristicasDTOSalida();
 
 		// when
 		PedidoDTOSalida pedidoDTOSalida = pedidoMapper.pedidoPedidoDTOSalida(pedido);

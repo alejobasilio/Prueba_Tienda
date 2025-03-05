@@ -4,8 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.only;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -18,9 +18,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.BDDMockito.willDoNothing;
-import static org.mockito.Mockito.verify;
 
 import com.alejobasilio.pruba_tienda.business.dtos.CarritoDTOEntrada;
 import com.alejobasilio.pruba_tienda.business.dtos.PedidoDTOEntrada;
@@ -77,20 +74,21 @@ class PedidoServicesImplTest {
 
 		// given - precondition or setup
 		Pedido pedido = new Pedido();
-		pedido.setId(1L);
+		Long id = 1L;
+		pedido.setId(id);
 
 		PedidoDTOSalida pedidoDTOSalida = new PedidoDTOSalida();
-		pedidoDTOSalida.setId(1L);
+		pedidoDTOSalida.setId(id);
 
-		when(pedidoRepository.findById(1L)).thenReturn(Optional.of(pedido));
+		when(pedidoRepository.findById(id)).thenReturn(Optional.of(pedido));
 		when(pedidoMapperImpl.pedidoPedidoDTOSalida(any(Pedido.class))).thenReturn(pedidoDTOSalida);
 
 		// when - action or the behavior that we are going test
 
-		Optional<PedidoDTOSalida> pedidoSaved = pedidoServicesImpl.obtenerPedidoPorId(1L);
+		Optional<PedidoDTOSalida> pedidoSaved = pedidoServicesImpl.obtenerPedidoPorId(id);
 
 		// then - verify the output
-		assertEquals(pedidoSaved.get().getId(), 1L);
+		assertEquals(pedidoSaved.get().getId(), id);
 	}
 
 	@Test
@@ -98,13 +96,14 @@ class PedidoServicesImplTest {
 
 		// given - precondition or setup
 		Pedido pedido = new Pedido();
-		pedido.setId(1L);
+		Long id = 1L;
+		pedido.setId(id);
 
-		when(pedidoRepository.findById(1L)).thenReturn(Optional.empty());
+		when(pedidoRepository.findById(id)).thenReturn(Optional.empty());
 
 		// when - action or the behavior that we are going test
 
-		Optional<PedidoDTOSalida> pedidoSaved = pedidoServicesImpl.obtenerPedidoPorId(1L);
+		Optional<PedidoDTOSalida> pedidoSaved = pedidoServicesImpl.obtenerPedidoPorId(id);
 
 		// then - verify the output
 		assertThat(pedidoSaved).isEmpty();
@@ -116,11 +115,12 @@ class PedidoServicesImplTest {
 
 		// given - precondition or setup
 		Pedido pedido = new Pedido();
-		pedido.setId(1L);
+		Long id = 1L; 
+		pedido.setId(id);
 		List<Pedido> listaPedidos = List.of(pedido);
 
 		PedidoDTOSalida pedidoDTOSalida = new PedidoDTOSalida();
-		pedidoDTOSalida.setId(1L);
+		pedidoDTOSalida.setId(id);
 
 		when(pedidoRepository.findAll()).thenReturn(listaPedidos);
 		when(pedidoMapperImpl.pedidoPedidoDTOSalida(pedido)).thenReturn(pedidoDTOSalida);
@@ -138,12 +138,12 @@ class PedidoServicesImplTest {
 	void givenPedidoId_whenBorrarPedidoById_thenNothing() {
 
 		// given - precondition or setup
-		
-		willDoNothing().given(pedidoRepository).deleteById(1L);;
+		Long id = 1L;
+		willDoNothing().given(pedidoRepository).deleteById(id);
 
 		// when - action or the behavior that we are going test
 
-		pedidoServicesImpl.borrarPedidoById(1L);
+		pedidoServicesImpl.borrarPedidoById(id);
 
 		// then - verify the output
 		verify(pedidoRepository, only()).deleteById(1L);
