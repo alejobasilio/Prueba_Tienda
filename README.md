@@ -22,6 +22,13 @@ Prueba Tienda es un proyecto de comercio que permite a los usuarios crear y gest
 > * Spring Boot 2.3 o superior
 
 > [!TIP]
+> ## Arquitectura
+> El proyecto Prueba Tienda se basa en una arquitectura de tres capas:
+>
+> * **Capa de presentación (Presentation)**: Esta capa se encarga de la interacción con el usuario y de mostrar la información de manera adecuada.
+> * **Capa de negocio (Business)**: Esta capa se encarga de la lógica de negocio del proyecto. Está implementada utilizando Spring Data JPA.
+> * **Capa de integración (Integration)**: Esta capa se encarga de la integración con la base de datos. Está implementada utilizando tecnologías como MySQL y Spring Data JPA.
+>
 > ## Funcionalidades
 > El proyecto incluye las siguientes funcionalidades:
 > * Crear y borrar pedidos de productos
